@@ -4,7 +4,7 @@ import asyncio
 import random
 import os
 
-ANNOYING = True
+ANNOYING = False
 
 BOT_TOKEN = os.environ['DISCORDBOT']
 
@@ -25,6 +25,14 @@ async def spam_test():
 
 @client.event
 async def on_message(message):
+    if message.content.startswith('$help'):
+        msg = client.send_message(channel, 'Alright, <@'+ str(message.author.id) +'>! I PMed you some help!')
+        msg = await client.send_message(message.author, 'Fetching Help Library...')
+        await asyncio.sleep(3)
+        await client.edit_message(msg, 'Help Text Coming Soon')
+
+@client.event
+async def on_message(message):
     """
     Command List:
      [*] "$guess": Allows user to guess a "randomly" generated 1 to 10 digit.
@@ -39,7 +47,7 @@ async def on_message(message):
 
     # GUESSING GAME ("$guess")
     if message.content.startswith('$guess'):
-        await client.send_message(message.channel, 'Guess a number between 1 to 10 (Answer within 5 seconds)')
+        await client.send_message(message.channel, 'Hey, <@'+ str(message.author.id) +'>, Guess a number between 1 to 10 (Answer within 5 seconds)')
         
         def guess_check(m):
             m = m.content
