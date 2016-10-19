@@ -1,9 +1,9 @@
-## Helperbot5000
-A helpful bot that "should" fulfill your needs in Discord. It might annoy you in the process! :)
+## Requirements
+Python 3 (of course)
+Discord.py
+- And all of Discord.py's requirements
 
+## Thats it
 
-## Created by
-
-Lucien Gaitskell and Connor Cruz
-
+Enjoy
 
