@@ -42,7 +42,14 @@ async def on_message(message):
         await client.send_message(message.channel, 'Guess a number between 1 to 10 (Answer within 5 seconds)')
         
         def guess_check(m):
-            return m.content.isdigit()
+            m = m.content
+            start_string = '<@{}>'.format(client.user.id)
+            if not m.startswith(start_string):
+                return False
+            else:
+                m = m[len(start_string):]
+                m.strip(' ')
+                return m.isdigit()
         
         guess = await client.wait_for_message(timeout=5.0, author=message.author, check=guess_check)
         answer = random.randint(1, 10)
