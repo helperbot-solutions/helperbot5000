@@ -34,9 +34,9 @@ async def on_message(message):
 @client.event
 async def on_message(message):
     """
-    Command List:
-     [*] "$guess": Allows user to guess a "randomly" generated 1 to 10 digit.
-    """
+        Command List:
+        [*] "$guess": Allows user to guess a "randomly" generated 1 to 10 digit.
+        """
     # we do not want the bot to reply to itself
     if message.author == client.user:
         return
@@ -44,7 +44,7 @@ async def on_message(message):
     if ANNOYING:
         msg = 'Howdy <@' + str(message.author.id) + '>. You said: "{0}". Here is your email: \n{1}'.format(message.content, str(message.author.avatar_url))
         mes = await client.send_message(message.channel, msg)
-
+    
     # GUESSING GAME ("$guess")
     if message.content.startswith('$guess'):
         await client.send_message(message.channel, 'Hey, <@'+ str(message.author.id) +'>, Guess a number between 1 to 10 (Answer within 5 seconds)')
