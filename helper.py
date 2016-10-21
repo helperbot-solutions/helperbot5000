@@ -18,7 +18,6 @@ async def spam_test():
 
     # Runs while client is live and ANNOYING is True
     while not client.is_closed and ANNOYING:
-        print(":)")
         await client.send_message(channel, "Helperbot Online!")
         await client.send_message(channel, "Ask any questions, NOW!")
 
@@ -89,6 +88,7 @@ async def on_message(message):
 
 @client.event
 async def on_ready():
+    print('Annoying: {}'.format(ANNOYING))
     print('Logged in as')
     print(client.user.name)
     print(client.user.id)
