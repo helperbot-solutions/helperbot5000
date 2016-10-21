@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 import discord
+import lib.params as pm
 import asyncio
 import random
 import os
 
-ANNOYING = False
+ANNOYING = pm.get_annoy()
 
 BOT_TOKEN = os.environ['DISCORDBOT']
 
