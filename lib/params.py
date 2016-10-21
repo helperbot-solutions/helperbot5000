@@ -49,4 +49,4 @@ def get_key(dict_key):
 
 def get_annoy():
     DICT_KEY = 'ANNOY'
-    get_key(DICT_KEY)
+    return get_key(DICT_KEY)
