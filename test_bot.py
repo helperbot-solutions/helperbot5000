@@ -11,6 +11,7 @@ module.
 There are a number of utility commands being showcased here.'''
 bot = commands.Bot(command_prefix='?', description=description)
 
+
 @bot.event
 async def on_ready():
     print('Logged in as')
@@ -18,13 +19,15 @@ async def on_ready():
     print(bot.user.id)
     print('------')
 
+
 @bot.command()
-async def add(left : int, right : int):
+async def add(left: int, right: int):
     """Adds two numbers together."""
     await bot.say(left + right)
 
+
 @bot.command()
-async def roll(dice : str):
+async def roll(dice: str):
     """Rolls a dice in NdN format."""
     try:
         rolls, limit = map(int, dice.split('d'))
@@ -37,20 +40,20 @@ async def roll(dice : str):
 
 
 @bot.command(description='For when you wanna settle the score some other way')
-async def choose(*choices : str):
+async def choose(*choices: str):
     """Chooses between multiple choices."""
     await bot.say(random.choice(choices))
 
 
 @bot.command()
-async def repeat(times : int, content='repeating...'):
+async def repeat(times: int, content='repeating...'):
     """Repeats a message multiple times."""
     for i in range(times):
         await bot.say(content)
 
 
 @bot.command()
-async def joined(member : discord.Member):
+async def joined(member: discord.Member):
     """Says when a member joined."""
     await bot.say('{0.name} joined in {0.joined_at}'.format(member))
 
