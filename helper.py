@@ -70,7 +70,7 @@ async def on_message(message):
                 return m.isdigit()
 
         guess = await client.wait_for_message(timeout=5.0,
-                                              author=message.author
+                                              author=message.author,
                                               check=guess_check)
         answer = random.randint(1, 10)
         if guess is None:
