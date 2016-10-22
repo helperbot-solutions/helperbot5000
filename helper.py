@@ -19,6 +19,12 @@ description = """A helper bot!
 client = commands.Bot(command_prefix='$', description=description)
 
 
+async def presence_set():
+    await client.wait_until_ready()
+    await client.change_presence(game=discord.Game
+                                 (name="with the Discord API"))
+
+
 @client.event
 async def on_ready():
     print('Annoying: {}'.format(ANNOYING))
