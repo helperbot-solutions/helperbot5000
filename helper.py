@@ -6,7 +6,11 @@ import asyncio
 import random
 import os
 
-ANNOYING = pm.get_annoy()
+try:
+    ANNOYING = pm.get_annoy()
+except KeyError:
+    ANNOYING = False
+
 
 BOT_TOKEN = os.environ['DISCORDBOT']
 
