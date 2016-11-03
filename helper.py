@@ -50,6 +50,13 @@ async def on_message(message):
                        str(message.author.avatar_url)))
         mes = await client.send_message(message.channel, msg)
 
+    # Send a link to the "Click Noice" video when the word 'noice' is mentioned
+    if any(s in message.content.lower() for s in ('noice', 'nice', 'noiice',
+                                                  'noicce')):
+        msg = ("Where you looking for this?" +
+               " https://www.youtube.com/watch?v=3WAOxKOmR90")
+        await client.send_message(message.channel, msg)
+
     await client.process_commands(message)
 
 
