@@ -38,6 +38,12 @@ async def on_ready():
     print('------')
 
 
+async def youtube_video_link_give(check_words, video_link, message):
+    if any(s in message.content.lower() for s in check_words):
+        msg = ("Where you looking for this? " + video_link)
+        await client.send_message(message.channel, msg)
+
+
 @client.event
 async def on_message(message):
     # we do not want the bot to reply to itself
@@ -51,11 +57,15 @@ async def on_message(message):
         mes = await client.send_message(message.channel, msg)
 
     # Send a link to the "Click Noice" video when the word 'noice' is mentioned
-    if any(s in message.content.lower() for s in ('noice', 'nice', 'noiice',
-                                                  'noicce')):
-        msg = ("Where you looking for this?" +
-               " https://www.youtube.com/watch?v=3WAOxKOmR90")
-        await client.send_message(message.channel, msg)
+    youtube_link = "https://www.youtube.com/watch?v=3WAOxKOmR90"
+    await youtube_video_link_give(('noice', 'nice', 'noiice', 'noicce'),
+                                  youtube_link, message)
+
+    # Send a link to the "Yeah Boi" video when the word 'yeah' or 'boi'/'boy'
+    # is mentioned
+    youtube_link = "https://www.youtube.com/watch?v=fvtQYsckLxk&t=1m5s"
+    await youtube_video_link_give(('yeah', 'yeh', 'boi', 'boy'), youtube_link,
+                                  message)
 
     await client.process_commands(message)
 
