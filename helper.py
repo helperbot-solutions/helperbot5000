@@ -70,7 +70,7 @@ async def on_message(message):
     # Send a link to the "Time to Stop" video when the word 'stop' or 'time' is
     # mentioned
     youtube_link = "https://www.youtube.com/watch?v=2k0SmqbBIpQ"
-    await youtube_video_link_give(('stop'), youtube_link,
+    await youtube_video_link_give(('stop',), youtube_link,
                                   message)
 
     await client.process_commands(message)
