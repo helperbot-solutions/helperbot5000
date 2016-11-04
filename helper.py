@@ -76,6 +76,21 @@ async def on_message(message):
     await client.process_commands(message)
 
 
+@client.command(pass_context=True, name='annoy')
+async def set_annoying(ctx, annoy: bool):
+    """Sets if the bot is annoying."""
+    global ANNOYING
+    author = ctx.message.author
+    if not isinstance(annoy, bool):
+        await client.say(("<@{}>, ERROR: Input has to be a boolean."
+                          .format(author.id)))
+        return
+
+    ANNOYING = annoy
+    await client.say(("<@{}>, the Annoying value has been set to {}."
+                      .format(author.id, annoy)))
+
+
 @client.command(pass_context=True)
 async def guess(ctx):
     """This is a guess."""
