@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import discord
 from discord.ext import commands
+from discord.ext.commands.bot import _default_help_command
 import lib.params as pm
 import asyncio
 import random
@@ -139,14 +140,14 @@ client.remove_command('help')
 
 # Custom help command:
 @client.command(pass_context=True, name='help')
-async def _help(ctx):
+async def _help(ctx, *commands: str):
     author = ctx.message.author
 
     await client.say('Alright, <@{}>! I PMed you some help!'
                      .format(str(author.id)))
     msg = await client.send_message(author, 'Fetching Help Library...')
-    await asyncio.sleep(3)
-    await client.edit_message(msg, 'Help Text Coming Soon')
+    await _default_help_command(ctx, *commands)
+    await client.edit_message(msg, 'Here\'s your help:')
 
 
 client.loop.create_task(presence_set())
