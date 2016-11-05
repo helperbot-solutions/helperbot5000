@@ -14,11 +14,7 @@ except KeyError:
 
 BOT_TOKEN = os.environ['DISCORDBOT']
 
-description = """A helper bot!
-    Command List:
-    [*] "$guess": Allows user to guess a "randomly" generated 1 to 10
-        digit.
-    """
+description = """A helper bot!"""
 
 client = commands.Bot(command_prefix='$', description=description)
 
@@ -93,7 +89,7 @@ async def set_annoying(ctx, annoy: bool):
 
 @client.command(pass_context=True)
 async def guess(ctx):
-    """This is a guess."""
+    """Allows user to guess a "randomly" generated 1 to 10 digit."""
     author = ctx.message.author
 
     await client.say(
