@@ -17,7 +17,8 @@ BOT_TOKEN = os.environ['DISCORDBOT']
 
 description = """A helper bot!"""
 
-client = commands.Bot(command_prefix='$', description=description)
+client = commands.Bot(command_prefix='$', pm_help=True,
+                      description=description)
 
 
 async def presence_set():
