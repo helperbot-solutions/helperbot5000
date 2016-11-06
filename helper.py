@@ -38,7 +38,7 @@ async def on_ready():
 
 async def youtube_video_link_give(check_words, video_link, message):
     if any(s in message.content.lower() for s in check_words):
-        msg = ("Where you looking for this? " + video_link)
+        msg = ("Were you looking for this? " + video_link)
         await client.send_message(message.channel, msg)
 
 
