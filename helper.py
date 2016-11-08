@@ -23,7 +23,7 @@ client = commands.Bot(command_prefix='$', pm_help=True,
 async def presence_set():
     await client.wait_until_ready()
     await client.change_presence(game=discord.Game
-                                 (name="with the Discord API"))
+                                 (name="Election Simulator"))
 
 
 @client.event
