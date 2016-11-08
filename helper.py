@@ -53,22 +53,23 @@ async def on_message(message):
                        str(message.author.avatar_url)))
         mes = await client.send_message(message.channel, msg)
 
-    # Send a link to the "Click Noice" video when the word 'noice' is mentioned
-    youtube_link = "https://www.youtube.com/watch?v=3WAOxKOmR90"
-    await youtube_video_link_give(('noice', 'nice', 'noiice', 'noicce'),
-                                  youtube_link, message)
+        # Send a link to the "Click Noice" video when the word 'noice' is
+        # mentioned
+        youtube_link = "https://www.youtube.com/watch?v=3WAOxKOmR90"
+        await youtube_video_link_give(('noice', 'nice', 'noiice', 'noicce'),
+                                      youtube_link, message)
 
-    # Send a link to the "Yeah Boi" video when the word 'yeah' or 'boi'/'boy'
-    # is mentioned
-    youtube_link = "https://www.youtube.com/watch?v=fvtQYsckLxk&t=1m5s"
-    await youtube_video_link_give(('yeah', 'yeh', 'boi', 'boy'), youtube_link,
-                                  message)
+        # Send a link to the "Yeah Boi" video when the word 'yeah' or
+        # 'boi'/'boy' is mentioned
+        youtube_link = "https://www.youtube.com/watch?v=fvtQYsckLxk&t=1m5s"
+        await youtube_video_link_give(('yeah', 'yeh', 'boi', 'boy'),
+                                      youtube_link, message)
 
-    # Send a link to the "Time to Stop" video when the word 'stop' or 'time' is
-    # mentioned
-    youtube_link = "https://www.youtube.com/watch?v=2k0SmqbBIpQ"
-    await youtube_video_link_give(('stop',), youtube_link,
-                                  message)
+        # Send a link to the "Time to Stop" video when the word 'stop' or
+        # 'time' is mentioned
+        youtube_link = "https://www.youtube.com/watch?v=2k0SmqbBIpQ"
+        await youtube_video_link_give(('stop',), youtube_link,
+                                      message)
 
     await client.process_commands(message)
 
