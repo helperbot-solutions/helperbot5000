@@ -2,13 +2,12 @@
 import discord
 from discord.ext import commands
 from discord.ext.commands.bot import _default_help_command
-import lib.params as pm
 import asyncio
 import random
 import os
 
 try:
-    ANNOYING = pm.get_annoy()
+    ANNOYING = os.environ['DISCORDBOT_ANNOY']
 except KeyError:
     ANNOYING = False
 

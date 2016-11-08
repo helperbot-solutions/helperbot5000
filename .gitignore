@@ -1,5 +1,2 @@
 # Python complied
 *.pyc
-
-# Shelve Files
-*.shelf
