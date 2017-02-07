@@ -9,4 +9,4 @@ A helpful bot that "should" fulfill your needs in Discord. It might annoy you in
 
 
 ### Created by
-Lucien Gaitskell and Connor Cruz
+Lucien and Connor 
