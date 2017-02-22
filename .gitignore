@@ -1,2 +1,5 @@
 # Python complied
 *.pyc
+
+# PyCharm:
+.idea/
